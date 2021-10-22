@@ -22,7 +22,7 @@ let min75 = document.querySelector('.min-75')
 let noRewardBtn =  document.querySelector('.no-reward-btn')
 let min25Btn =  document.querySelector('.min-25-btn')
 let min75Btn =  document.querySelector('.min-75-btn')
-let noRewardValue = document.querySelector('.no-reward-js').value
+
 /* -------------------------------------------------------------- */
 let noRewardBorder =  document.querySelector('.no-reward-border')
 let min25Border =  document.querySelector('.min-25-border')
@@ -88,10 +88,17 @@ closeBtn.addEventListener('click', ()=>{
                
         })
     } 
-    /* ------------------------------------------ Validation of input----------------------- */
+    /* ------------------------------------------ Validation of input and update progress----------------------- */
     
         noRewardBtn.addEventListener('click', ()=>{   
-        alert(8)
+            let noRewardValue = document.querySelector('.no-reward-js').value
+        
+            currentSum = 89914
+            currentSum = currentSum + parseInt(noRewardValue)
+            currentBackers = 5007
+            currentBackers=currentBackers + 1
+            finalSum.innerHTML=`${currentSum}`
+            totalBackers.innerHTML=`${currentBackers}`
             pledgeMenu.style.display = 'none'      
             thankYou.style.display = 'flex'
     
@@ -99,26 +106,44 @@ closeBtn.addEventListener('click', ()=>{
    
     min25Btn.addEventListener('click', ()=>{   
         let min25value = document.querySelector('.min-25-js').value
+       
+        currentSum = 89914
+        currentSum = currentSum + parseInt(min25value)
+        currentBackers = 5007
+        currentBackers=currentBackers + 1
+        
+        
+        
         if(min25value < 25){
             
             error25.classList.add('active')
         }   else{
         error25.classList.remove('active')
+        finalSum.innerHTML=`${currentSum}`
+        totalBackers.innerHTML=`${currentBackers}`
             pledgeMenu.style.display = 'none'      
             thankYou.style.display = 'flex'
             }
     })
+
     min75Btn.addEventListener('click', ()=>{   
         let min75value = document.querySelector('.min-75-js').value
+        currentSum = 89914
+        currentSum = currentSum + parseInt(min25value)
+        currentBackers = 5007
+        currentBackers=currentBackers + 1
         if(min75value < 75){
-            alert(min75value)
+            
             error75.classList.add('active')
         }   else{
         error75.classList.remove('active')
+        finalSum.innerHTML=`${currentSum}`
+        totalBackers.innerHTML=`${currentBackers}`
             pledgeMenu.style.display = 'none'      
             thankYou.style.display = 'flex'
             }
     })
+    
     
 /* -------------------------------------------------Final step--------------------------------------- */
 thankYouBtn.addEventListener('click', ()=>{
