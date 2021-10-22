@@ -5,7 +5,7 @@ let hamburger = document.querySelector('.hamburger')
 let modalHeader = document.querySelector('.modal-for-header')
 let modalHeaderCloseBtn = document.querySelector('.modal-header-close-btn')
 let modal = document.querySelector('.modal')
-let sectionBorder = document.querySelectorAll('.bamboo-wrap')[0] 
+let sectionBorders = document.querySelectorAll('.bamboo-wrap')
 let closeBtn = document.querySelector('#close-btn')
 let pledgeMenu =  document.querySelector('.about-wrap-modal')
 let inputBtns = document.querySelectorAll('.green-btn-continue')
@@ -23,7 +23,11 @@ let noRewardBtn =  document.querySelector('.no-reward-btn')
 let min25Btn =  document.querySelector('.min-25-btn')
 let min75Btn =  document.querySelector('.min-75-btn')
 let noRewardValue = document.querySelector('.no-reward-js').value
-
+/* -------------------------------------------------------------- */
+let noRewardBorder =  document.querySelector('.no-reward-border')
+let min25Border =  document.querySelector('.min-25-border')
+let min75Border =  document.querySelector('.min-75-border')
+/* --------------------------------------------------------------- */
 
 let error25 = document.querySelector('.error-25')
 let error75 = document.querySelector('.error-75')
@@ -36,7 +40,7 @@ bookmark.addEventListener('click', ()=> {
     if (bookmarkP.innerText = 'Bookmark') {
          bookmarkP.innerText = 'Bookmarked'
         
-    }   else {
+    }   else if ( bookmarkP.innerText = 'Bookmarked'){
          bookmarkP.innerText = 'Bookmark'
     }    
 }) 
@@ -60,17 +64,28 @@ closeBtn.addEventListener('click', ()=>{
             cards.forEach((card) =>{
                 card.classList.remove('show')
             })
+            sectionBorders.forEach((sectionBorder) =>{
+                sectionBorder.classList.remove('add-border')
+            })
             if(item.classList.contains('no-reward-h4')) {
                 noReward.classList.add('show')
+                noRewardBorder.classList.add('add-border')
             }
             
             if(item.classList.contains('min-25-h4')) {
                 min25.classList.add('show')
+                min25Border.classList.add('add-border')
             }
             
             if(item.classList.contains('min-75-h4')) {
                 min75.classList.add('show')
+                min75Border.classList.add('add-border')
             }
+
+           
+
+
+               
         })
     } 
     /* ------------------------------------------ Validation of input----------------------- */
