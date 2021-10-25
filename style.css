@@ -186,7 +186,7 @@ color: var(--dark-gray);
     border-right: 1px solid var(--background-white);
 }
 .line-wrap{
-width: 634px;
+width: 574px;
 height: 12px;
 background: var(--background-white);
 border-radius: 33.5px;
@@ -194,7 +194,7 @@ border-radius: 33.5px;
 .line{
     background-color: var(--moderate-cyan);
     border-radius: 33.5px;
-    width: 496px;
+     width: 80%; 
     height: inherit;
 }
 .position-line{
@@ -380,21 +380,17 @@ width: 24px;
 height: 24px;
 
 }
-.input-radio:checked {
+.input-radio input:checked::after {
     background-color: var(--dark-cyan);
 }
+
 .pledge-modal{
     
     display: flex;
     justify-content: flex-start;
     column-gap: 5em;
 }
- .change #circle{
-     fill: aqua;
- }
- .change #path{
-     fill: burlywood;
- }
+ 
 .active .modal{
     display: flex;
 }

@@ -18,6 +18,8 @@ let cards = document.querySelectorAll('.card-js')
 let noReward = document.querySelector('.no-reward')
 let min25 = document.querySelector('.min-25')
 let min75 = document.querySelector('.min-75') 
+let line = document.querySelector(".line")
+let maxSum = 100000
 /* --------------------------------------------- */
 let noRewardBtn =  document.querySelector('.no-reward-btn')
 let min25Btn =  document.querySelector('.min-25-btn')
@@ -88,38 +90,46 @@ closeBtn.addEventListener('click', ()=>{
                
         })
     } 
-    /* ------------------------------------------ Validation of input and update progress----------------------- */
+    /* ------------------------------------------ Validation of input and update progress bar----------------------- */
     
         noRewardBtn.addEventListener('click', ()=>{   
             let noRewardValue = document.querySelector('.no-reward-js').value
-        
-            currentSum = 89914
+            
+           
+            let currentSum = 89914
             currentSum = currentSum + parseInt(noRewardValue)
-            currentBackers = 5007
+            let currentBackers = 5007
             currentBackers=currentBackers + 1
-            finalSum.innerHTML=`${currentSum}`
+            finalSum.innerHTML=`$${currentSum}`
             totalBackers.innerHTML=`${currentBackers}`
-            pledgeMenu.style.display = 'none'      
-            thankYou.style.display = 'flex'
+            
+          let changeWidth = (currentSum * 100)/maxSum;
+          let lineWidth = changeWidth.toFixed(2) % 100;
+         line.style.width = lineWidth.toString() + "%";
     
+            pledgeMenu.style.display = 'none'      
+            thankYou.style.display = 'flex'
     })
    
     min25Btn.addEventListener('click', ()=>{   
         let min25value = document.querySelector('.min-25-js').value
        
-        currentSum = 89914
+        let currentSum = 89914
         currentSum = currentSum + parseInt(min25value)
-        currentBackers = 5007
+        let currentBackers = 5007
         currentBackers=currentBackers + 1
-        
-        
+    
         
         if(min25value < 25){
             
             error25.classList.add('active')
         }   else{
         error25.classList.remove('active')
-        finalSum.innerHTML=`${currentSum}`
+        let changeWidth = (currentSum * 100)/maxSum;
+        let lineWidth =changeWidth.toFixed(2) % 100;
+        line.style.width =
+        lineWidth.toString() + "%";
+        finalSum.innerHTML=`$${currentSum}`
         totalBackers.innerHTML=`${currentBackers}`
             pledgeMenu.style.display = 'none'      
             thankYou.style.display = 'flex'
@@ -128,22 +138,28 @@ closeBtn.addEventListener('click', ()=>{
 
     min75Btn.addEventListener('click', ()=>{   
         let min75value = document.querySelector('.min-75-js').value
-        currentSum = 89914
-        currentSum = currentSum + parseInt(min25value)
-        currentBackers = 5007
+        let currentSum = 89914
+        currentSum = currentSum + parseInt(min75value)
+        let currentBackers = 5007
         currentBackers=currentBackers + 1
+
+
         if(min75value < 75){
             
             error75.classList.add('active')
         }   else{
         error75.classList.remove('active')
-        finalSum.innerHTML=`${currentSum}`
+        let changeWidth = (currentSum * 100)/maxSum;
+        let lineWidth =changeWidth.toFixed(2) % 100;
+        line.style.width =
+        lineWidth.toString() + "%";
+        finalSum.innerHTML=`$${currentSum}`
         totalBackers.innerHTML=`${currentBackers}`
             pledgeMenu.style.display = 'none'      
             thankYou.style.display = 'flex'
             }
     })
-    
+   
     
 /* -------------------------------------------------Final step--------------------------------------- */
 thankYouBtn.addEventListener('click', ()=>{
